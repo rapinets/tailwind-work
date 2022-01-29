@@ -1,0 +1,19 @@
+{
+    "name": "tailwind_work",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build-css": "tailwindcss build src/style.css -o public/style.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^10.4.1",
+        "postcss": "^8.4.5",
+        "postcss-cli": "^8.3.1",
+        "tailwindcss": "^3.0.11",
+        "tailwindcss-pseudo-elements": "^2.0.0"
+    }
+}

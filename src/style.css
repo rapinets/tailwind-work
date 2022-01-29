@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-black;
+    }
+}
+
+.breadcrumb {
+    background-color: white;
+    height: 3.5rem;
+}
+
+.breadcrumb ul {
+    margin-left: 1rem;
+    display: flex;
+    height: 100%;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.breadcrumb li > a {
+    color: darkslateblue;
+}
+    
+.breadcrumb li::before {
+    content: "→";
+}
+    
+.breadcrumb li:first-child::before {
+    content: "";
+}
+
+.breadcrumb span {
+    font-size: 1.2em;
+    margin: 0 .5rem
+}
+
+@layer components {
+    .layout {
+        @apply flex flex-col h-screen w-full bg-black;
+    }
+    .wrapper {
+        @apply container mx-auto;
+    }
+    .main-header {
+        @apply fixed top-0 z-10 w-full h-14 bg-red-800 md:h-36 md:border-b-8 border-black;
+    }
+     .main-header + * {
+        @apply md:mt-36;
+    } 
+    .navbar {
+        @apply flex justify-between h-full relative;
+    }
+
+    .brand {
+        @apply flex ml-14 h-14 md:unset-ml md:mt-14 md:flex-grow-0;
+    }
+    .logo {
+        @apply flex justify-center items-center w-14 h-14 pr-2;
+    }
+    .brand-holder {
+        @apply relative md:hidden;
+    }
+    .brand-name {
+        @apply flex justify-center items-center h-14 pr-2 md:hidden lg:flex;
+    }
+    .main-nav-holder {
+        @apply fixed top-0 right-full z-20 w-full h-screen pb-14 bg-red-800 ms:w-80
+        md:unset-position md:h-full md:unset-right md:unset-pb md:flex md:w-full;
+    }
+    .pull-out-menu {
+        @apply unset-right left-0;
+    }
+    .burger-toggle {
+        @apply flex justify-center items-center w-14 h-14 cursor-pointer absolute top-0 -right-14;
+    }
+    .burger {
+        @apply flex justify-center items-center w-14 h-14 cursor-pointer absolute top-0 right-0 z-30;
+    }
+    .main-nav-container {
+        @apply flex flex-col h-full overflow-y-auto overflow-x-hidden  bg-black text-white
+        md:flex-col-reverse md:unset-bg-color md:text-black md:w-full;
+    }
+    .main-nav-container nav {
+        @apply md:mt-6;
+    }
+    .main-nav {
+        @apply flex flex-col my-4 md:flex-row md:unset-mb md:unset-mt md:mx-4;
+    }
+    .main-nav-item {
+        @apply h-14 w-full transform duration-300 hover:scale-110
+        border-b-2 border-red-800 hover:bg-red-800 md:bg-red-800 md:rounded-t
+        md:hover:bg-red-900 md:border-red-900 md:mr-2.5;
+    }
+    .nav-link {
+        @apply flex items-center justify-start pl-8 h-full w-full md:unset-pl md:justify-center;
+    }
+    .nav-link span {
+        @apply md:text-black;
+    }
+    
+    .topbar {
+        @apply w-full pt-6 border-t-8 border-gray-800 md:unset-b md:unset-pt md:h-14;
+    }
+    .topbar-holder {
+        @apply flex flex-col py-2 md:flex-row md:justify-between md:fixed md:left-0
+        md:right-0 md:top-0 md:unset-pb;
+    }
+    .topbar-container {
+        @apply flex flex-col justify-between w-full md:flex-row;
+    }
+    .contacts {
+        @apply flex flex-col items-start w-full md:flex-row;
+    }
+    
+    .contacts-icon {
+        @apply h-14 w-14 flex items-center justify-center;
+    }
+    .contacts span {
+        @apply flex items-center justify-center h-full w-full whitespace-nowrap;
+    }
+    .topbar-group {
+        @apply flex flex-col md:flex-row md:justify-end;
+    }
+    .social-group {
+        @apply flex w-full h-14 md:unset-w;
+    }
+    .social-group-item {
+        @apply h-full w-14;
+    }
+    .auth-group {
+        @apply md:flex md:justify-center md:items-center md:w-14 md:h-14 md:relative;
+    }
+    .auth-nav {
+        @apply flex flex-col divide-y divide-gray-900 w-full md:absolute md:top-14 md:right-0 md:w-28;
+    }
+    .auth-nav-item {
+        @apply h-14 w-full flex transform hover:scale-110 bg-gray-800 md:justify-center md:items-center md:bg-red-700 md:border-black md:border-2;
+    }
+    .arrow {
+        @apply hidden md:flex md:hover:text-gray-600 md:cursor-pointer;
+    }
+    .express-nav {
+        @apply flex justify-end items-center w-full h-14 p-2.5 md:mt-14 md:flex-grow md:unset-w;
+    }
+    .express-nav-item {
+        @apply w-14 h-14 flex justify-center items-center;
+    }
+
+    .carousel {
+        @apply w-full h-96 relative mt-36 border-b-8 border-black hidden md:block;
+    }
+    .prev-btn {
+        @apply w-14 h-14 absolute top-48 left-14 opacity-50 hover:opacity-70;
+    }
+    .next-btn {
+        @apply w-14 h-14 absolute top-48 right-14 opacity-50 hover:opacity-70;
+    }
+    .carousel-holder {
+        @apply w-full h-full bg-purple-900 overflow-hidden;
+    }
+    .carousel-list {
+        @apply w-full h-full;
+    }
+    .carousel-item {
+        @apply w-full h-96 hidden bg-center;
+    }
+
+    main {
+        @apply mt-14 flex-grow flex-shrink-0 text-white sm:text-justify md:unset-mt;
+    }
+    .main-content {
+        @apply flex flex-col p-0.5 md:flex-row-reverse;
+    }
+    .aside-block {
+        @apply md:border-l-2 md:border-gray-800 md:pl-1.5 md:w-1/4;
+    }
+    .aside-img {
+        @apply flex items-center justify-center overflow-hidden  mb-1.5;
+    }
+    .aside-img > img {
+        @apply border-2 border-black rounded-md;
+    }
+    .content-block {
+        @apply md:flex-auto md:pr-3;
+    }
+    .img-container {
+        @apply flex flex-col md:flex-row;
+    }
+    .img-content {
+        @apply overflow-hidden border-2 border-black rounded-md mb-1.5;
+    }
+    footer {
+        @apply w-full flex-shrink-0 bg-red-800;
+    }
+    .footer-container {
+        @apply flex flex-col-reverse items-center py-1.5;
+    }
+    .nav-footer {
+        @apply flex flex-row text-xs divide-x-2 divide-gray-900 md:text-sm;
+    }
+    .nav-footer-item {
+        @apply p-2;
+    }
+    .main-content .section-posts {
+        @apply md:w-3/4 lg:w-4/6;
+    }
+    .main-content .cards-list {
+        @apply w-full flex flex-wrap;
+    }
+    .main-content .card {
+        @apply p-2.5 2md:flex-0-50 xl:flex-0-333;
+    }
+    .main-content .card-container {
+        @apply border border-gray-400 md:flex 2md:block;
+    }
+    .main-content .card-body {
+        @apply p-3.5;
+    }
+    .main-content .card-image-wrapper {
+        @apply flex items-center justify-center relative overflow-hidden md:flex-0-0-33;
+    }
+    .main-content .card-image-wrapper img {
+        @apply w-full md:unset-w md:h-full md:absolute 2md:w-full 2md:unset-h 2md:unset-position        ;
+    }
+}
