@@ -746,40 +746,9 @@
             <!-- // Footer -->
         </div>
 
-        <script>
-            (function () {
-                const menu = document.getElementById('main-menu');
-                const navbar = document.getElementById('navbar');
-                const burger = document.getElementById('burger');
-                const dropdown = document.getElementById('dropdown');
-
-                const offsetTop = 150;
-                const mdBreakePoint = 768;
-
-                let Y = window.pageYOffset; // current Y offset
-
-                let isOpen = () => menu.classList.contains('pull-out-menu')
-
-                let initOpen = () => {
-                    menu.classList.add('pull-out-menu');
-                    burger.classList.add('burger');
-                    document.body.style.overflowY = 'hidden';
-                }
-
-                let initClose = () => {
-                    menu.classList.remove('pull-out-menu');
-                    burger.classList.remove('burger');
-                    document.body.style.removeProperty('overflow-y');
-                }
-
-                burger.addEventListener('click', e => {
-                    if (e.path.includes(menu) || (isOpen() && e.path.includes(navbar))) {
-                        isOpen() ? initClose() : initOpen()
-                    }
-                });
-            })();
-        </script>
+       
         <script src="dropdown.js"></script>
         <script src="carousel.js"></script>
+        <script src="main-menu.js"></script>
     </body>
 </html>

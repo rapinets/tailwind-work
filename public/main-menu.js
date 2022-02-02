@@ -1,32 +1,34 @@
 (function () {
     const header = document.querySelector('.layout .main-header');
     const navbar = header.querySelector('.navbar');
-    const toggle = header.querySelector('.main-nav-holder .toggle-holder');
-    const menu = document.getElementById('#menu');
-    const burger = document.getElementById('#burger');
+    
+    const menu = document.getElementById('main-menu');
+    const burger = document.getElementById('burger');
 
     const offsetTop = 150;
     const mdBreakePoint = 768;
-    //const openClass = '--open';
-    const openClass = 'left-0';
-    const closeClass = '-left-full';
-    const hideClass = '--hide';
+    
+    const openClass = 'pull-out-menu';
+    
+    const hideClass = 'hide';
 
     let Y = window.pageYOffset; // current Y offset
 
-    //let isOpen = () => header.classList.contains(openClass);
+    
     let isOpen = () => menu.classList.contains(openClass);
     let isHide = () => header.classList.contains(hideClass);
 
     let initOpen = () => {
-        //header.classList.add(openClass);
+        
+        burger.classList.add('burger');
         menu.classList.add(openClass);
         document.body.style.overflowY = 'hidden';
     };
 
     let initClose = () => {
-        //header.classList.remove(openClass);
-        menu.classList.add(closeClass);
+        
+        menu.classList.remove(openClass);
+        burger.classList.remove('burger');
         document.body.style.removeProperty('overflow-y');
     };
 

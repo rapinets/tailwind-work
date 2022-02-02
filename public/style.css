@@ -1450,12 +1450,6 @@ footer {
   width: 100%;
 }
 
-.scale-110 {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: var(--tw-transform);
-}
-
 .flex-row {
   flex-direction: row;
 }

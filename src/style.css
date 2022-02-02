@@ -79,6 +79,9 @@
     .pull-out-menu {
         @apply unset-right left-0;
     }
+    .hide {
+        @apply -top-14 md:h-14;
+    }
     .burger-toggle {
         @apply flex justify-center items-center w-14 h-14 cursor-pointer absolute top-0 -right-14;
     }
